@@ -1,0 +1,228 @@
+ /* Dependencies
+***********************************************/
+/* CSS Reset (Eric Meyer)
+***********************************************/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+ /* HTML Elements
+***********************************************/
+body {
+  color: #333;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.6em; }
+
+p, ul.unstyled, ol.unstyled, dl {
+  margin-bottom: 25.6px; }
+
+h1 {
+  font-size: 2.61792em;
+  line-height: 1em;
+  margin-bottom: 25.6px; }
+
+h2 {
+  font-size: 1.618em;
+  line-height: 1em;
+  margin-bottom: 25.6px; }
+
+h3 {
+  font-weight: 700;
+  line-height: 1em;
+  margin-bottom: 25.6px; }
+
+/* Helper Classes
+***********************************************/
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  *text-indent: -9999px; }
+
+.ir:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 150%; }
+
+.hidden {
+  visibility: hidden; }
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto; }
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+.clearfix {
+  *zoom: 1; }
+
+/* Header
+***********************************************/
+header {
+  padding: 30px 30px 0 30px; }
+  header:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+header .kaseya-logo {
+  display: inline-block; }
+
+header .toggle-nav {
+  border: solid 1px #ddd;
+  border-radius: 4px;
+  height: 40px;
+  position: absolute;
+  right: 20px;
+  text-align: center;
+  top: 30px;
+  width: 40px;
+  -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out; }
+  header .toggle-nav img {
+    margin-top: 11px; }
+
+/* Navigation
+***********************************************/
+.global-nav {
+  background-color: #0072bc;
+  bottom: 0;
+  left: 100%;
+  padding: 40px 30px 0 0;
+  position: absolute;
+  top: 0;
+  width: 240px; }
+
+.global-nav > ul {
+  margin: 0;
+  -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  -webkit-transform: translate3d(0, 20px, 0);
+  -moz-transform: translate3d(0, 20px, 0);
+  -ms-transform: translate3d(0, 20px, 0);
+  -o-transform: translate3d(0, 20px, 0);
+  transform: translate3d(0, 20px, 0);
+  opacity: 0; }
+
+.global-nav > ul li {
+  line-height: 1em;
+  margin-bottom: 1.6em;
+  padding-left: 30px; }
+  .global-nav > ul li a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none; }
+
+.global-nav li.selected > a {
+  font-weight: 700; }
+
+.global-nav > ul > li.selected > a:before {
+  content: '';
+  left: 0;
+  line-height: 1em;
+  position: absolute;
+  height: 0;
+  width: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0.5em;
+  border-left-color: white; }
+
+.global-nav-sub-menu {
+  margin-top: 1.6em; }
+  .global-nav-sub-menu li {
+    padding-left: 20px; }
+
+.wrapper {
+  -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out; }
+
+.global-nav-is-opened {
+  -webkit-transform: translate3d(-240px, 0, 0);
+  -moz-transform: translate3d(-240px, 0, 0);
+  -ms-transform: translate3d(-240px, 0, 0);
+  -o-transform: translate3d(-240px, 0, 0);
+  transform: translate3d(-240px, 0, 0); }
+  .global-nav-is-opened ul {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+
+.rotate-clockwise-90-degrees {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg); }
+
+/* Main Body
+***********************************************/
+.main-body {
+  padding: 30px;
+  -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out; }

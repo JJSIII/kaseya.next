@@ -1,0 +1,210 @@
+ /* Dependencies
+***********************************************/
+
+@import 'reset';
+@import 'neat';
+
+$base-font-size: 16px;
+$global-nav-animation-timing: 200ms;
+
+
+ /* HTML Elements
+***********************************************/
+
+body {
+    color: #333;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: $base-font-size;
+    font-weight: 300;
+    line-height: 1.6em;
+}
+
+p, ul.unstyled, ol.unstyled, dl {
+    margin-bottom: 1.6 * $base-font-size;
+}
+
+h1 {
+    font-size: golden-ratio( 1em,  2 );
+    line-height: 1em;
+    margin-bottom: 1.6 * $base-font-size;
+}
+
+h2 {
+    font-size: golden-ratio( 1em,  1 );
+    line-height: 1em;
+    margin-bottom: 1.6 * $base-font-size;
+}
+
+h3 {
+    font-weight: 700;
+    line-height: 1em;
+    margin-bottom: 1.6 * $base-font-size;
+}
+
+/* Helper Classes
+***********************************************/
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+
+
+/* Header
+***********************************************/
+
+header {
+    @include clearfix;
+    padding: 30px 30px 0 30px;
+}
+
+header .kaseya-logo {
+    display: inline-block;
+}
+
+header .toggle-nav {
+    border: solid 1px #ddd;
+    border-radius: 4px;
+    height: 40px;
+    position: absolute;
+    right: 20px;
+    text-align: center;
+    top: 30px;
+    width: 40px;
+    @include transition ( all $global-nav-animation-timing ease-in-out );
+
+    img {
+        margin-top: 11px;
+    }
+}
+
+
+
+/* Navigation
+***********************************************/
+
+.global-nav {
+    background-color: #0072bc;
+    bottom: 0;
+    left: 100%;
+    padding: 40px 30px 0 0;
+    position: absolute;
+    top: 0;
+    width: 240px;
+}
+
+    .global-nav > ul {
+        margin: 0;
+        @include transition ( all $global-nav-animation-timing ease-in-out );
+        @include transform( translate3d(0, 20px, 0) );
+        opacity: 0;
+    }
+
+    .global-nav > ul li {
+        line-height: 1em;
+        margin-bottom: 1.6em;   
+        padding-left: 30px;
+
+        a {
+            color: #fff;
+            font-size: 18px;
+            text-decoration: none;
+        }
+    }
+
+    .global-nav li.selected > a {
+        font-weight: 700;
+    }
+
+    .global-nav > ul > li.selected > a:before {
+        content: '';
+        left: 0;
+        line-height: 1em;
+        position: absolute;
+        @include triangle( 1em, #fff, right );
+    }
+
+.global-nav-sub-menu {
+    margin-top: 1.6em;
+
+    li {
+        padding-left: 20px;
+    }
+}
+
+.wrapper {
+    @include transition ( all $global-nav-animation-timing ease-in-out );
+}
+
+.global-nav-is-opened {
+    @include transform( translate3d(-240px, 0, 0) );
+
+    ul {
+        opacity: 1;
+        @include transform( translate3d(0, 0, 0) );
+    }
+}
+
+.rotate-clockwise-90-degrees {
+    @include transform( rotate(90deg) );
+}
+
+
+
+
+/* Main Body
+***********************************************/
+
+.main-body {
+    padding: 30px;
+    @include transition ( all $global-nav-animation-timing ease-in-out );
+}
