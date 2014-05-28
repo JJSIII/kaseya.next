@@ -7,6 +7,9 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <script type="text/javascript" src="//use.typekit.net/kij2emn.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
         <!-- @reload -->
 
         <!-- @stylesheet main -->
@@ -24,16 +27,13 @@
 
                 <header>
 
-                <div class="header-branding">
-                    
-                    <a href="/" class="kaseya-logo"><img src="/img/kaseya-logo.svg" alt="Kaseya logo"></a>
-
-                    <div class="kaseya-logo-tagline">The IT Management Cloud Company&trade;</div>
-
-                </div>
+                    <a href="/" class="kaseya-logo">
+                        <img src= "img/kaseya-logo-no-tag.svg" class="logo" alt="Kaseya logo">
+                        <img src= "img/kaseya-logo-tag.svg" class="tagline" alt="Kaseya tagline">
+                    </a>
 
 
-                    <a href="#global-nav" class="toggle-nav"><img src="/img/glyph-hamburger.svg" alt="Toggle navigation"></a>
+                    <a href="#global-nav" class="toggle-nav"><img src= "img/glyph-hamburger.svg" alt="Toggle navigation"></a>
 
 
 
@@ -41,11 +41,11 @@
 
                         <ul>
                             <li>
-                                <input type="text" name="header-search" placeholder="Search"><input type="image" src="/img/glyph-search.svg">
+                                <input type="text" name="header-search" placeholder="Search"><input type="image" src= "img/glyph-search.svg">
                             </li>
-                            <li><img src="/img/glyph-chat.svg" alt=""> <a href="#">Support</a></li>
-                            <li><img src="/img/glyph-mail.svg" alt=""> <a href="#">Contact</a></li>
-                            <li><img src="/img/glyph-lock.svg" alt=""> <a href="#">Login</a></li>
+                            <li><img src= "img/glyph-chat.svg" alt=""> <a href="#">Support</a></li>
+                            <li><img src= "img/glyph-mail.svg" alt=""> <a href="#">Contact</a></li>
+                            <li><img src= "img/glyph-lock.svg" alt=""> <a href="#">Login</a></li>
                         </ul>
 
                     </nav>
@@ -55,7 +55,7 @@
                     <nav class="global-nav" id="global-nav">
 
                         <ul>
-                            <li class="selected"><a href="#">Home</a>
+                            <li class="selected"><a href="#" class="js-root-menu">Home</a>
 
                                 <ul class="global-nav-sub-menu visually-hidden">
                                     <li><a href="#">Menu Item 1</a></li>
@@ -64,7 +64,7 @@
                                 </ul>
 
                             </li>
-                            <li><a href="#">Solutions</a>
+                            <li><a href="#" class="js-root-menu">Solutions</a>
 
                                 <ul class="global-nav-sub-menu visually-hidden">
                                     <li><a href="#">Menu Item 1</a></li>
@@ -73,7 +73,7 @@
                                 </ul>
 
                             </li>
-                            <li><a href="#">Products</a>
+                            <li><a href="#" class="js-root-menu">Products</a>
 
                                 <ul class="global-nav-sub-menu visually-hidden">
                                     <li><a href="#">Menu Item 1</a></li>
@@ -82,7 +82,7 @@
                                 </ul>
 
                             </li>
-                            <li><a href="#">Industries</a>
+                            <li><a href="#" class="js-root-menu">Industries</a>
 
                                 <ul class="global-nav-sub-menu visually-hidden">
                                     <li><a href="#">Menu Item 1</a></li>
@@ -91,7 +91,7 @@
                                 </ul>
 
                             </li>
-                            <li><a href="#">About</a>
+                            <li><a href="#" class="js-root-menu">About</a>
 
                                 <ul class="global-nav-sub-menu visually-hidden">
                                     <li><a href="#">Menu Item 1</a></li>
@@ -161,7 +161,7 @@
 
                     <h2>About Kaseya</h2>
 
-                    <p class="small">
+                    <p>
                         Kaseya is the leading provider of cloud-based IT management software. Kaseya solutions allow Managed Service Providers (MSPs) and IT organizations to efficiently manage IT in order to drive IT service and business success. Offered as both an industry-leading cloud solution and on-premise software, Kaseya solutions empower MSPs and mid-sized enterprises to command all of IT centrally, manage remote and distributed environments with ease, and automate across IT management functions. Kaseya solutions are in use by more than 10,000 customers worldwide in a wide variety of industries, including retail, manufacturing, healthcare, education, government, media, technology, finance, and more. Kaseya is privately held with a presence in over 20 countries. To learn more, please visit <a href="http://www.kaseya.com">http://www.kaseya.com</a>.
                     </p>
 
@@ -208,6 +208,6 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
 
-        <!-- @javascript main -->
+        <!-- @javascript jquery.headroom main -->
     </body>
 </html>

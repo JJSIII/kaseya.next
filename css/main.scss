@@ -79,7 +79,7 @@ $tablet-screen: new-breakpoint(min-width 767px); // tablet size and larger
 
 body {
     color: #333;
-    font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    font-family: 'raleway', sans-serif;
     font-size: $base-font-size;
     font-weight: 300;
     line-height: 1.6em;
@@ -177,15 +177,15 @@ input[type='text'] {
     }
 
     h1 {
-        font-size: 36px;
+        font-size: 32px;
     }
 
     .intro {
-        font-size: golden-ratio( 36px,  -1 );
+        font-size: golden-ratio( 32px,  -1 );
     }
 
     h2 {
-        font-size: golden-ratio( 36px,  -1 );
+        font-size: golden-ratio( 32px,  -1 );
         font-weight: 400;
     }
 }
@@ -217,28 +217,28 @@ input[type='text'] {
 ***********************************************/
 
 header {
-    padding: 2em 2em 11px 2em;
-    @include clearfix;
-}
-
-header .header-branding {
-    @include transition ( all $global-nav-animation-timing $global-nav-animation-easing );
+    padding: 2em 2em 0 2em;
+    margin-bottom: -11px;
 }
 
 header .kaseya-logo {
-    display: inline-block;
-}
-
-header .kaseya-logo-tagline {
     background-color: #fff;
-    font-family: $georgia;
-    font-size: 11px;
-    font-weight: 700;
-    margin-left: -10px;
+    display: inline-block;
+    margin-left: -5px;
     padding: 0 10px;
-    position: absolute;
-    white-space: nowrap;
-    z-index: 1;
+
+    img {
+        display: block;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    .tagline {
+        margin-top: 4px;
+        width: 220px;
+    }
 }
 
 header .toggle-nav {
@@ -265,15 +265,105 @@ header .toggle-nav {
 @include media($tablet-screen) {
 
     header {
-        padding-top: 10px;
+        margin-bottom: 0;
+        height: 116px;
+        padding-top: 20px;
+        position: fixed;
+        text-align: right;
+        z-index: 1;
     }
 
-    header .kaseya-logo img {
-        width: 110px;
+    header * {
+        @include transition ( all $global-nav-animation-timing $global-nav-animation-easing );
+    }
+
+    header:after {
+        content: '';
+        background-color: #fff;
+        height: 116px;
+        left: 0;
+        position: fixed;
+        top: 0;
+        @include transition ( all $global-nav-animation-timing $global-nav-animation-easing );
+        width: 100%;
+        z-index: -1;
+    }
+
+    header:before {
+        content: '';
+        background-color: $kaseya-blue;
+        height: 2px;
+        left: 0;
+        position: fixed;
+        top: 103px;
+        width: 100%;
+        @include transition ( all $global-nav-animation-timing $global-nav-animation-easing );
+        z-index: 0;
+    }
+
+    header .kaseya-logo {
+        float: none;
+        left: 2em;
+        margin-left: -10px;
+        position: absolute;
+        top: 30px;
+        z-index: 2;
+
+        .logo {
+            width: 110px;
+        }
+
+        .tagline {
+            margin-top: 8px;
+            width: 250px;
+        }
     }
 
     header .kaseya-logo-tagline {
         font-size: 13px;
+    }
+
+    // sticky nav
+
+    header.headroom--not-top:after {
+        @include box-shadow( 0 0 11px 0 rgba(0, 0, 0, .3) );
+    }
+
+    header.headroom--unpinned {
+
+        height: 60px;
+
+        .kaseya-logo {
+            background-color: transparent;
+            margin: 0;
+            padding: 0;
+            top: 10px;
+        }
+
+        .kaseya-logo .logo {
+            width: 80px;
+        }
+
+        .kaseya-logo .tagline {
+            opacity: 0;
+        }
+
+        .utility-menu {
+            opacity: 0;
+            @include transform( translate3d(0, -20px, 0) );
+        }
+
+        .global-nav {
+            margin-top: -28px;
+        }
+    }
+
+    header.headroom--unpinned:after {
+        height: 60px;
+    }
+
+    header.headroom--unpinned:before {
+        top: 58px;
     }
 
 }
@@ -344,20 +434,13 @@ header .toggle-nav {
 
 @include media($tablet-screen) {
 
-    header {
-        text-align: right;
-    }
-
-    header .header-branding {
-        float: left;
-    }
-
     header .toggle-nav {
         display: none;
     }
 
     .utility-menu {
         display: block;
+        @include transition ( all $global-nav-animation-timing $global-nav-animation-easing );
 
         li {
             display: inline-block;
@@ -389,8 +472,10 @@ header .toggle-nav {
     .global-nav {
         background-color: transparent;
         bottom: auto;
+        display: block;
         @include clearfix;
         left: auto;
+        margin-top: 26px;
         padding: 0;
         position: relative;
         top: auto;
@@ -398,21 +483,18 @@ header .toggle-nav {
     }
 
     .global-nav > ul {
-        bottom: 16px;
-        display: block;
         opacity: 1;
-        position: absolute;
-        right: 0;
+        @include transform( translate3d(0, 0, 0) );
 
         li {
             display: inline-block;
-            font-weight: 400;
+            font-weight: 300;
             margin: 0 0 0 20px;  
             padding: 0;
 
             a {
                 color: #666;
-                font-size: 20px;
+                font-size: 22px;
                 text-transform: lowercase;
             }
         }
@@ -446,6 +528,7 @@ header .toggle-nav {
     padding: 2em 2em 0 2em;
     position: relative;
     @include transition ( all $global-nav-animation-timing $global-nav-animation-easing );
+    z-index: -1;
 }
 
 
@@ -453,8 +536,8 @@ header .toggle-nav {
 
     .main-body {
         border: none;
-        border-top: 2px solid $kaseya-blue;
-        padding-top: 3em;
+        position: relative;
+        padding-top: 160px;
     }
 
 }
