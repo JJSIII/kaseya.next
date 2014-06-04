@@ -67,8 +67,8 @@ $(document).ready(function() {
 		// Sticky navigation
 
 		// jQuery Headroom
-		var myElement = document.querySelector("header");
-		var headroom  = new Headroom(myElement, {
+		var headerContainer = document.querySelector('header .container');
+		var headroom  = new Headroom(headerContainer, {
 			onUnpin : function() {
 
 			},
@@ -80,7 +80,7 @@ $(document).ready(function() {
 
 		// Set width of header to width of inner-wrapper
 		var innerWrapperWidth = $('.inner-wrapper').innerWidth();
-		$('header').css('width', innerWrapperWidth);
+		$('header .container').css('width', innerWrapperWidth);
 
 	}
 

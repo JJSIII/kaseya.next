@@ -207,7 +207,7 @@ input[type='text'] {
 
 
 @include media($tablet-screen) {
-    .outer-wrapper {
+    .container {
         @include outer-container;
     }
 }
@@ -265,19 +265,25 @@ header .toggle-nav {
 @include media($tablet-screen) {
 
     header {
-        margin-bottom: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    header .container {
         height: 116px;
-        padding-top: 20px;
+        left: 0;
+        margin: 0 auto;
         position: fixed;
+        right: 0;
         text-align: right;
         z-index: 1;
     }
 
-    header * {
+    header .container * {
         @include transition ( all $global-nav-animation-timing $global-nav-animation-easing );
     }
 
-    header:after {
+    header .container:after {
         content: '';
         background-color: #fff;
         height: 116px;
@@ -289,7 +295,7 @@ header .toggle-nav {
         z-index: -1;
     }
 
-    header:before {
+    header .container:before {
         content: '';
         background-color: $kaseya-blue;
         height: 2px;
@@ -301,9 +307,9 @@ header .toggle-nav {
         z-index: 0;
     }
 
-    header .kaseya-logo {
+    header .container .kaseya-logo {
         float: none;
-        left: 2em;
+        left: 0;
         margin-left: -10px;
         position: absolute;
         top: 30px;
@@ -319,17 +325,17 @@ header .toggle-nav {
         }
     }
 
-    header .kaseya-logo-tagline {
+    header .container .kaseya-logo-tagline {
         font-size: 13px;
     }
 
     // sticky nav
 
-    header.headroom--not-top:after {
+    header .container.headroom--not-top:after {
         @include box-shadow( 0 0 11px 0 rgba(0, 0, 0, .3) );
     }
 
-    header.headroom--unpinned {
+    header .container.headroom--unpinned {
 
         height: 60px;
 
@@ -358,11 +364,11 @@ header .toggle-nav {
         }
     }
 
-    header.headroom--unpinned:after {
+    header .container.headroom--unpinned:after {
         height: 60px;
     }
 
-    header.headroom--unpinned:before {
+    header .container.headroom--unpinned:before {
         top: 58px;
     }
 
@@ -440,6 +446,7 @@ header .toggle-nav {
 
     .utility-menu {
         display: block;
+        padding-top: 20px;
         @include transition ( all $global-nav-animation-timing $global-nav-animation-easing );
 
         li {
